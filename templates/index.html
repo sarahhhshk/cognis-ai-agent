@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognis AI — Ultimate Study Companion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="cyber-bg"></div>
+
+    <div class="dashboard-wrapper">
+        
+        <!-- LEFT SIDEBAR -->
+        <aside class="left-sidebar">
+            <div class="brand">
+    <div class="logo-icon">
+        <i class="fa-solid fa-brain"></i>
+    </div>
+
+    <h1>COGNIS AI</h1>
+
+    <p>Your Personal AI Study Companion</p>
+</div>
+
+            <nav class="nav-menu">
+    <a href="#" class="nav-item tab-link active" data-tab="chat"><i class="fa-solid fa-comment-dots"></i> Chat</a>
+    <a href="#" class="nav-item tab-link" data-tab="notes"><i class="fa-solid fa-file-lines"></i> Notes</a>
+    <a href="#" class="nav-item tab-link" data-tab="quiz"><i class="fa-solid fa-circle-question"></i> Quiz</a>
+    <a href="#" class="nav-item tab-link" data-tab="planner"><i class="fa-solid fa-calendar-days"></i> Planner</a>
+    <a href="#" class="nav-item tab-link" data-tab="progress"><i class="fa-solid fa-chart-simple"></i> Progress</a>
+    <a href="#" class="nav-item tab-link" data-tab="settings"><i class="fa-solid fa-gear"></i> Settings</a>
+</nav>
+
+
+            <div class="user-profile">
+                <div class="avatar-circle">S</div>
+                <div class="user-details">
+                    <h4>Sarahh ✨ <i class="fa-solid fa-chevron-down"></i></h4>
+                </div>
+            </div>
+        </aside>
+
+        <!-- DYNAMIC CENTER CONTENT AREA -->
+        <main class="center-content">
+            <header class="top-header">
+                <div class="greeting">
+                    <h2>Welcome back, Sarahh! 👋</h2>
+                    <p>What are we studying today?</p>
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+                    <button class="icon-btn"><i class="fa-solid fa-bell"></i></button>
+                    <div class="profile-img-container">
+                        <img src="https://via.placeholder.com/40" alt="Profile">
+                    </div>
+                </div>
+            </header>
+
+            <!-- TAB CONTAINER 1: MAIN CHAT DASHBOARD -->
+            <div id="chat-panel" class="tab-content">
+                <section class="robot-stage">
+                    <div class="speech-bubble-left">
+                        <p>Hey Sarahh! 💙<br>I'm Cognis!<br>Let's learn, have fun and grow together! 🚀</p>
+                        <div class="audio-wave-ui"><span></span><span></span><span></span><span></span></div>
+                    </div>
+
+                    <div class="giant-avatar-container">
+                        <div class="glow-ring"></div>
+                        <div class="main-robot"></div>
+                    </div>
+
+                    <div class="mood-selectors">
+                        <div class="mood-item"><span class="emoji">😀</span> Happy</div>
+                        <div class="mood-item active"><span class="emoji">🤔</span> Thinking</div>
+                        <div class="mood-item"><span class="emoji">🤩</span> Excited</div>
+                        <div class="mood-item"><span class="emoji">🤓</span> Teaching</div>
+                    </div>
+
+                    <div class="voice-trigger-area">
+                        <div class="wave-left"></div>
+                        <button class="mic-trigger-btn"><i class="fa-solid fa-microphone"></i></button>
+                        <div class="wave-right"></div>
+                        <p class="mic-label">Tap to speak</p>
+                    </div>
+                </section>
+
+                <section class="chat-component">
+                    <div class="chat-header">
+                        <h3><i class="fa-solid fa-messages"></i> Chat with Cognis</h3>
+                        <button class="clear-chat-btn"><i class="fa-solid fa-trash-can"></i> Clear Chat</button>
+                    </div>
+
+                    <div class="chat-messages-box">
+                        <div class="chat-row bot">
+                            <div class="chat-avatar-bot"></div>
+                            <div class="msg-wrapper">
+                                <div class="msg-bubble">Hey! I'm Cognis. What are we studying today? 📚</div>
+                                <div class="msg-meta">11:20 AM</div>
+                            </div>
+                        </div>
+                        <div class="chat-row user">
+                            <div class="msg-wrapper">
+                                <div class="msg-bubble">Let's study Binary Search.</div>
+                                <div class="msg-meta">11:21 AM <i class="fa-solid fa-check-double read-check"></i></div>
+                            </div>
+                        </div>
+                        <div class="chat-row bot">
+                            <div class="chat-avatar-bot"></div>
+                            <div class="msg-wrapper">
+                                <div class="msg-bubble">Great choice! 💡 Binary Search is an efficient searching algorithm used to find an element in a sorted array by repeatedly dividing the search interval in half. It reduces the time complexity to $O(\log n)$. 🚀</div>
+                                <div class="msg-actions">
+                                    <button><i class="fa-regular fa-copy"></i></button>
+                                    <button><i class="fa-regular fa-bookmark"></i></button>
+                                    <button><i class="fa-solid fa-volume-high"></i></button>
+                                    <button><i class="fa-regular fa-thumbs-up"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="suggested-pills">
+                        <button class="pill">Explain with example</button>
+                        <button class="pill">Give code in Python</button>
+                        <button class="pill">Create a quiz</button>
+                        <button class="pill">More...</button>
+                    </div>
+
+                    <div class="chat-input-deck">
+                        <button class="attach-file-btn"><i class="fa-solid fa-paperclip"></i></button>
+                        <input type="text" placeholder="Ask anything..." id="chat-input-field">
+                        <button class="input-mic-btn"><i class="fa-solid fa-microphone"></i></button>
+                        <button class="submit-chat-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- TAB CONTAINER 2: NOTES -->
+            <div id="notes-panel" class="tab-content hidden" style="padding: 20px;">
+                <h2 style="color: #a855f7;"><i class="fa-solid fa-file-lines"></i> Syllabus Notes & Study Guides</h2>
+                <p style="color: #9ca3af; margin-top: 10px;">Your compiled smart notes, flashcard summaries, and dynamic outlines live here.</p>
+            </div>
+
+            <!-- TAB CONTAINER 3: QUIZ -->
+            <div id="quiz-panel" class="tab-content hidden" style="padding: 20px;">
+                <h2 style="color: #a855f7;"><i class="fa-solid fa-circle-question"></i> Interactive AI Quizzes</h2>
+                <p style="color: #9ca3af; margin-top: 10px;">Test your knowledge with custom mock assignments and diagnostics built from your materials.</p>
+            </div>
+
+            <!-- TAB CONTAINER 4: PLANNER -->
+            <div id="planner-panel" class="tab-content hidden" style="padding: 20px;">
+                <h2 style="color: #a855f7;"><i class="fa-solid fa-calendar-days"></i> Custom Study Planner</h2>
+                <p style="color: #9ca3af; margin-top: 10px;">Keep track of your study deadlines, active session timelines, and micro-milestones.</p>
+            </div>
+
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="right-sidebar">
+            <div class="sidebar-panel plain-border">
+                <h3>Syllabus & Tools</h3>
+                <div class="upload-dropzone">
+                    <i class="fa-solid fa-cloud-arrow-up cloud-up"></i>
+                    <h4>Upload your syllabus</h4>
+                    <p>PDF, DOCX, TXT</p>
+     <input
+         type="file"
+         id="syllabus-file"
+         accept=".pdf,.doc,.docx,.txt"
+         hidden>
+
+     <button class="upload-action-btn" id="upload-btn">
+         <i class="fa-solid fa-upload"></i>
+         Upload File
+     </button>
+                    
+                </div>
+                <ul class="sub-tool-links">
+                    <li><i class="fa-solid fa-bars-staggered"></i> <div><strong>Summary</strong><p>Get key points</p></div></li>
+                    <li><i class="fa-solid fa-diagram-project"></i> <div><strong>Mind Map</strong><p>Visualize topics</p></div></li>
+                    <li><i class="fa-solid fa-star"></i> <div><strong>Important Topics</strong><p>Extract key topics</p></div></li>
+                    <li><i class="fa-solid fa-layer-group"></i> <div><strong>Flashcards</strong><p>AI generated cards</p></div></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-panel">
+                <h3>Fun Zone with Cognis</h3>
+                <ul class="fun-zone-menu">
+                    <li class="fun-item">
+                        <span class="fun-icon-wrap roast">👹</span>
+                        <div><strong>Roast Mode</strong><p>Let's roast a topic 😜</p></div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                    <li class="fun-item">
+                        <span class="fun-icon-wrap gossip">💬</span>
+                        <div><strong>Gossip Corner</strong><p>Spill the study tea ☕</p></div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                    <li class="fun-item">
+                        <span class="fun-icon-wrap facts">🤩</span>
+                        <div><strong>Fun Facts</strong><p>Random study facts 🤯</p></div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                    <li class="fun-item">
+                        <span class="fun-icon-wrap boost">💙</span>
+                        <div><strong>Motivation Boost</strong><p>You got this! 💙</p></div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+<!-- ===========================
+     FUN ZONE POPUP
+=========================== -->
+
+<div id="funModal" class="fun-modal">
+
+    <div class="fun-modal-content">
+
+        <span id="closeFunModal">&times;</span>
+
+        <h2 id="funTitle">Fun Zone</h2>
+
+        <input
+            type="text"
+            id="funTopic"
+            placeholder="Enter a topic..."
+        >
+
+        <button id="generateFunBtn">
+            Generate
+        </button>
+
+        <div id="funResult"></div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+AI TOOL MODAL
+=========================== -->
+
+<div id="toolModal" class="fun-modal">
+
+    <div class="fun-modal-content">
+
+        <span id="closeToolModal">&times;</span>
+
+        <h2 id="toolTitle">AI Tool</h2>
+
+        <input
+            type="text"
+            id="toolTopic"
+            placeholder="Enter Subject..."
+        >
+
+        <input
+            type="date"
+            id="plannerDate"
+            style="display:none;margin-top:10px;"
+        >
+
+        <button id="generateToolBtn">
+            Generate
+        </button>
+
+        <div id="toolResult"></div>
+
+    </div>
+
+</div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</div>
+</body>
+</html>
